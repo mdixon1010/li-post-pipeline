@@ -1,6 +1,9 @@
 # LinkedIn Post Pipeline Tool
 
-> Convert your Medium Articles into LinkedIn Posts
+<p align="center">
+  <i align="center">Instantly convert your Medium articles into LinkedIn posts 🚀</i>
+</p>
+
 
 <div align="center">
 <img src="assets/cover-new.webp" alt="Medium-to-LinkedIn Post Transformer" width="600" height="300">
@@ -80,7 +83,7 @@ pytest --cov=src tests/
 flake8 src/
 ```
 
-
+<br>
 
 ## 📝  To Do
 
@@ -88,3 +91,16 @@ flake8 src/
 - [ ] Create tests for post pipeline
 - [ ] Create tests for scraper
 - [ ] Increase test coverage
+
+
+<br>
+<br>
+
+
+
+<div align="center">
+    <img src="assets/bearded-data-logo.png" alt="Bearded Data Logo" width="300" height="300">
+</div>
+
+<h4 align="center">
+  <a href="https://www.beardeddata.com/"> BeardedData.com </a>
