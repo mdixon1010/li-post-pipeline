@@ -46,16 +46,7 @@ Example: \
 
 ## To Do
 
-### General
-- Smoke test/ update things
-- Fill in gitignore
-- Start version controlling this on GH
-
-### Post Generator 
 - productionalize the post pipeline
 - create tests for post pipeline
 - create tests for scraper
 - increase test coverage
-
-
-I have the following python file used in a larger codebase.  Please provide google style docstrings and format the code using PEP8 standards. Also, if there are things that should be tidied up before releasing to production let me know, but dont modify the code. 
