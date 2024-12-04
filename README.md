@@ -1,52 +1,90 @@
 # LinkedIn Post Pipeline Tool
 
-## How to Setup
+> Convert your Medium Articles into LinkedIn Posts
 
-1. Clone the repo
+<div align="center">
+<img src="assets/cover-new.webp" alt="Medium-to-LinkedIn Post Transformer" width="600" height="300">
+</div>
 
-1. Create a python virtual envrionment \
-`python3 -m venv lipost` 
+<br> 
 
-1. Activate your virtual environment \
-`source lipost/bin/activate`
+Transform your Medium articles into professional-grade LinkedIn posts effortlessly! This project taps into the potential of LLMs, implementing an innovative judging mechanism based on the [LLM as a judge paper](https://huggingface.co/papers/2306.05685).
 
-1. Install dependencies with `pip` \
-`pip install -r requirements.txt`
+- Streamlines content repurposing.
+- Built with ChatGPT and designed for extensibility.
+- Includes a basic feedback loop for improved output quality.
 
-1.  Create an environment file using the format in `env/.env_sample`
+<br>
 
-1. Source your env file \
-` source env/.env`
+🚀  Your feedback is greatly appreciated. 
 
-1. Create LinkedIn post from Medium article \
-`python src/li_post_pipeline.py ARTICLE_TITLE=title USER=user`\
-\
-Example: \
-`python src/li_post_pipeline.py "BigQuery Table Partitioning — A Comprehensive Guide" matt.dixon1010`
+<br>
 
+## 🔧 How to Setup/ Run
 
-## Helpful Links
-- https://pub.towardsai.net/scraping-your-medium-stories-a3a078ab2e7f
+```shell
+# Open a terminal (Command Prompt or PowerShell for Windows, Terminal for macOS or Linux)
+
+# Ensure Git is installed
+# Visit https://git-scm.com to download and install console Git if not already installed
+
+# Clone the repo
+git clone git@github.com:mdixon1010/li-post-pipeline.git
+
+# Create a python virtual envrionment
+python3 -m venv lipost
+
+# Activate your virtual environment
+source lipost/bin/activate
+
+# Install dependencies with pip
+pip install -r requirements.txt
+
+# Create an environment file using the format in `env/.env_sample`
+touch env/.env
+
+#Source your env file
+source env/.env
+
+#Create LinkedIn post from Medium article
+python src/li_post_pipeline.py ARTICLE_TITLE=title USER=user
+
+# Actual Example: 
+python src/li_post_pipeline.py "BigQuery Table Partitioning — A Comprehensive Guide" matt.dixon1010
+
+```
+
+<br>
+
+##  📚 Helpful Links
+- [Scraping Medium RSS Feed](https://pub.towardsai.net/scraping-your-medium-stories-a3a078ab2e7f)
 - [OpenAI API Key Usage Activity Page](https://platform.openai.com/usage/activity)
 
-## Services Used: 
+<br> 
+
+## 🌏 External Services Used
 - [ChatGPT API](https://platform.openai.com/)
 
-## Pre Push to Origin
-### Run Tests
-`pytest tests/`
+<br>
 
-### Check Test Coverage
-`pytest --cov=src tests/`
+## 🤖 Pre-Push to Origin
 
-### Check Linting
-`flake8 src/`
+```shell
+# Run Tests
+pytest tests/
+
+# Check Test Coverage
+pytest --cov=src tests/
+
+# Check Linting
+flake8 src/
+```
 
 
 
-## To Do
+## 📝  To Do
 
-- productionalize the post pipeline
-- create tests for post pipeline
-- create tests for scraper
-- increase test coverage
+- [ ] Productionalize the post pipeline
+- [ ] Create tests for post pipeline
+- [ ] Create tests for scraper
+- [ ] Increase test coverage
