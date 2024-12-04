@@ -1,0 +1,8 @@
+bs4
+pandas
+requests
+openai
+pyyaml
+flake8
+pytest
+pytest-cov
