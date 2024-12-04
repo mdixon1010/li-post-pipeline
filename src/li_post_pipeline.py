@@ -33,50 +33,7 @@ def add_bolierplate (post_body: str, tags: List[str], article_url: str) -> str:
     final_post = final_post + '\n' + "https://www.beardeddata.com"
     final_post = final_post + '\n\n' + "#" + tag_str
     return(final_post)
-
-
-
-# if __name__ == "__main__":
-
-#     feed = "https://medium.com/feed/@matt.dixon1010"
-#     article_title = 'BigQuery Table Partitioning — A Comprehensive Guide'
     
-#     # Scrape post and grab context/ metadata
-#     article_data = scrape_medium_article(feed, article_title)
-
-#     title = article_data.get('title')
-#     tags = article_data.get('tags')
-#     text = article_data.get('article_content')
-#     link = article_data.get('link')
-
-#     article_text = title + '\n' + text
-
-#     # Create draft post bodies
-#     drafts = []
-#     for i in range(3): 
-#         draft_post_body = create_post_draft(article_text)
-
-#         print( f"Option #{i+1}")
-#         print(draft_post_body)
-#         print('\n')
-#         drafts.append(draft_post_body)
-
-
-#     # Grab the best one
-#     final_draft = rank_post_drafts(drafts)
-
-#     print( f"Final Draft")
-#     print(final_draft)
-#     print('\n')
-
-
-#     # Add bolerplate to it
-#     final_post = add_bolierplate(final_draft, tags, link)
-
-
-#     print( f"!------------------ Final Post ------------------!")
-#     print(final_post)
-#     print('\n')
 
 def main(feed: str, article_title: str):
     """
