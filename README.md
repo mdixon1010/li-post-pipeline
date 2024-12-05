@@ -88,6 +88,7 @@ flake8 src/
 ## 📝  To Do
 
 - [ ] Increase test coverage
+- [ ] Clean up linting results
 
 
 <br>
