@@ -87,9 +87,6 @@ flake8 src/
 
 ## 📝  To Do
 
-- [ ] Productionalize the post pipeline
-- [ ] Create tests for post pipeline
-- [ ] Create tests for scraper
 - [ ] Increase test coverage
 
 
