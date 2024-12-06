@@ -44,12 +44,10 @@ def review_drafts_openai(posts: List[str]) -> str:
 
     # Validate input
     if not isinstance(posts, list) or len(posts) != 3 or not all(isinstance(post, str) and post.strip() for post in posts):
-        error = """Invalid input: `posts` must be a list of exactly
-        three non-empty strings."""
+        error = """Invalid input: `posts` must be a list of exactly three non-empty strings."""
         logging.error(error)
 
-        val_error = """`posts` must be a list of exactly three
-        non-empty strings."""
+        val_error = """`posts` must be a list of exactly three non-empty strings."""
         raise ValueError(val_error)
 
     # Load system message from configuration file
