@@ -5,6 +5,7 @@ import warnings
 
 warnings.filterwarnings('ignore', category=XMLParsedAsHTMLWarning)
 
+
 def scrape_article(feed_url: str, article: str):
     """
     Scrapes an RSS feed and extracts articles, including titles, tags, and content.
@@ -50,19 +51,15 @@ def scrape_article(feed_url: str, article: str):
 
         if title == article:
             return article_dict
-            
 
     return None
 
-
-                     
 
 if __name__ == "__main__":
 
     feed = "https://medium.com/feed/@matt.dixon1010"
     article_title = 'BigQuery Table Partitioning — A Comprehensive Guide'
 
-    article_data = scrape_article(feed,article_title )
+    article_data = scrape_article(feed, article_title)
 
     print(article_data)
-

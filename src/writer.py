@@ -4,11 +4,12 @@ import logging
 from openai import OpenAI
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, 
+logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s - %(levelname)s - %(module)s - %(message)s")
 
 # Constants
 YML_CONFIG = os.environ.get("YML_CONFIG", "./config/system_prompts.yml")
+
 
 def write_post_openai(medium_content: str) -> str:
     """
@@ -45,7 +46,7 @@ def write_post_openai(medium_content: str) -> str:
     except FileNotFoundError:
         logging.error(f"Configuration file not found at: {YML_CONFIG}")
         raise FileNotFoundError(f"Configuration file {YML_CONFIG} not found.")
-    
+
     except yaml.YAMLError as e:
         logging.error("Error parsing YAML file: {e}")
         raise ValueError(f"Error parsing YAML file: {e}")
@@ -55,7 +56,7 @@ def write_post_openai(medium_content: str) -> str:
     if not system_message:
         logging.error("Missing `reviewer_system_message` in configuration file.")
         raise ValueError("The 'writer_system_message' key is missing in the configuration.")
-    
+
     logging.info("System message loaded successfully.")
 
     user_message = (
@@ -80,11 +81,11 @@ def write_post_openai(medium_content: str) -> str:
             raise ValueError("Invalid response format from OpenAI API.")
 
         draft = response.choices[0].message.content
-    
+
         logging.info("Successfully generated draft from OpenAI.")
 
         return draft
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
-        raise  
+        raise

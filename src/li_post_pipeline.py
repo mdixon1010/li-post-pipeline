@@ -6,8 +6,10 @@ from reviewer import review_drafts_openai
 from typing import List, Dict
 
 # Configure logging
-logging.basicConfig(level=logging.INFO,
-                    format="%(asctime)s - %(levelname)s - %(module)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(module)s - %(message)s"
+)
 
 logger = logging.getLogger(__name__)
 
@@ -21,16 +23,18 @@ def scrape_medium_article(feed: str, article_title: str) -> Dict[str, str]:
         article_title (str): The title of the article to scrape.
 
     Returns:
-        Dict[str, str]: A dictionary containing article metadata such as title, tags,
-                        content, and link.
+        Dict[str, str]: A dictionary containing article metadata such as title
+        , tags,content, and link.
 
     Raises:
-        ValueError: If the article cannot be scraped or is missing required fields.
+        ValueError: If the article cannot be scraped or is missing required
+        fields.
     """
     try:
         article_data = scrape_article(feed, article_title)
         if not article_data:
-            raise ValueError(f"Article '{article_title}' not found in feed: {feed}")
+            error = f"Article '{article_title}' not found in feed: {feed}"
+            raise ValueError(error)
         return article_data
     except Exception as e:
         logger.error("Error scraping article: %s", e)
@@ -148,9 +152,13 @@ def main(feed: str, article_title: str):
 
 if __name__ == "__main__":
     # Set up argument parsing
-    parser = argparse.ArgumentParser(description="Scrape a Medium article and generate draft posts.")
-    parser.add_argument("article_title", type=str, help="The title of the article to scrape")
-    parser.add_argument("username", type=str, help="The username of the Medium author")
+    description = "Scrape a Medium article and generate draft posts."
+    article_title_help = "The title of the article to scrape"
+    username_help = "The title of the article to scrape"
+
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument("article_title", type=str, help=article_title_help)
+    parser.add_argument("username", type=str, help=username_help)
 
     # Parse the arguments
     args = parser.parse_args()
